@@ -1,7 +1,7 @@
 ## fis-scaffold-github
 
 介绍：fis默认脚手架仓库为lightsjs.duapp.com。这里提供从github下载的脚手架功能。
-可以参考次代码实现其他repos的下载。
+可以参考此处代码来实现其他repos的下载。
 
 ## 使用
 
@@ -23,7 +23,7 @@
 * 例如可以下载 fisp init lily-zhangying/fis-site/master
 * ref不写默认为master
 
-### 更多命令请看
+### fisp init命令使用请看
 * [fis-command-init](https://github.com/xiangshouding/fis-command-init)
 
 ## 缺点
