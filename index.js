@@ -12,7 +12,6 @@ module.exports = function(options) {
 		if (!options.withPlugin) {
 			scf_opts.exclude = /package\.json|\/plugin\/.*|page\/layout.tpl|README.md/i;
         }
-        
         download_fn('lily-zhangying/pc-scaffold-module', scf_opts, function (err, dirname) {
             if (!options.withPlugin) {
                 fis.util.del(path.resolve(dist, dirname + '/plugin'));
@@ -24,9 +23,9 @@ module.exports = function(options) {
 
 	function widget_fn() {
 		download_fn('lily-zhangying/pc-scaffold-widget', scf_opts, function (err, dirname) {
-            fis.scaffold.mv(path.resolve(dist, dirname), dist);
-            var files = fis.util.find(dist);
-            fis.util.map(files, function (index, filepath) {
+			fis.scaffold.mv(path.resolve(dist, dirname), dist);
+			var files = fis.util.find(dist);
+			fis.util.map(files, function (index, filepath) {
             	if (filepath) {
                     var name = require('path').basename(dist);
                     
@@ -50,7 +49,7 @@ module.exports = function(options) {
 
             fis.scaffold.prompt(dist);
         });
-}
+    }
 
 	//download from github
 	function download_fn(cmd, opt, cb) {
