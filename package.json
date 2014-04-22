@@ -1,0 +1,29 @@
+{
+  "name": "fis-scaffold-demo",
+  "version": "0.0.3",
+  "description": "scaffold demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lily-zhangying/fis-scaffold-demo.git"
+  },
+  "keywords": [
+    "fis",
+    "scaffold",
+    "demo"
+  ],
+  "author": {
+    "name": "lily"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lily-zhangying/fis-scaffold-pc/issues"
+  },
+  "dependencies": {
+      "request": "*"
+  },
+  "homepage": "https://github.com/xiangshouding/fis-scaffold-pc"
+}
