@@ -5,12 +5,12 @@ var request = require('request'),
 
 module.exports = function(options) {
 	var scf_opts = options;
-		scf_opts.repos = 'https://api.github.com/repos/',
-		dist = scf_opts.dir;
+	    scf_opts.repos = 'https://api.github.com/repos/',
+	    dist = scf_opts.dir;
 
 	function module_fn() {
 		if (!options.withPlugin) {
-            scf_opts.exclude = /package\.json|\/plugin\/.*|page\/layout.tpl|README.md/i;
+			scf_opts.exclude = /package\.json|\/plugin\/.*|page\/layout.tpl|README.md/i;
         }
         
         download_fn('lily-zhangying/pc-scaffold-module', scf_opts, function (err, dirname) {
@@ -20,17 +20,14 @@ module.exports = function(options) {
             fis.scaffold.mv(path.resolve(dist, dirname), dist);
             fis.scaffold.prompt(dist);
         });
-	}
+    }
 
 	function widget_fn() {
-
 		download_fn('lily-zhangying/pc-scaffold-widget', scf_opts, function (err, dirname) {
             fis.scaffold.mv(path.resolve(dist, dirname), dist);
             var files = fis.util.find(dist);
             fis.util.map(files, function (index, filepath) {
-
-                if (filepath) {
-                    
+            	if (filepath) {
                     var name = require('path').basename(dist);
                     
                     //replace rel path
@@ -53,7 +50,7 @@ module.exports = function(options) {
 
             fis.scaffold.prompt(dist);
         });
-	}
+}
 
 	//download from github
 	function download_fn(cmd, opt, cb) {
@@ -74,14 +71,14 @@ module.exports = function(options) {
 		request.get(request_options, function(err, result, body) {
 			if(err) {
 				fis.log.error(err);
-                return;
-            }else {
+				return;
+			}else {
 				var extractDir = opt.dir;
 				var dispos = result.headers['content-disposition'];
 				var dirname = dispos.split(';').pop().split('=').pop().replace(/\.zip$/g, '').toString();
 				try {
 					var zipFile = new AdmZip(body);
-                	zipFile.extractAllTo(extractDir, true);
+					zipFile.extractAllTo(extractDir, true);
 				}catch(e) {
 					fis.log.error(e);
 				}
