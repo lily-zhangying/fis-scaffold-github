@@ -15,21 +15,25 @@
 ### 安装 widget
 2.  fisp init widget -s github -d ../
 
-### 下载github上repo
+### 下载github上项目
 
 3.  fisp init :owner/:repos/:ref -s github -d ../
 
-:owner/:repos/:ref 是github的项目地址
-例如可以下载 fisp init lily-zhangying/fis-site/master
-ref不写默认为master
+* :owner/:repos/:ref 是github的项目地址
+* 例如可以下载 fisp init lily-zhangying/fis-site/master
+* ref不写默认为master
+
+### 更多命令请看
+* [fis-command-init](https://github.com/xiangshouding/fis-command-init)
 
 ## 缺点
 
 * 无法处理依赖
-    默认fisjiao脚手架（repos为lightjs.duapp.com），在会**递归下载所有依赖** ,然后再进行处理。github下载不会处理依赖。
+
+默认fisjiao脚手架（repos为lightjs.duapp.com），在会**递归下载所有依赖** ,然后再进行处理。github下载不会处理依赖。
 
 
 ## 其他资源
 
-[fis-command-init](https://github.com/xiangshouding/fis-command-init)
-[fis-scaffold-pc](https://github.com/xiangshouding/fis-scaffold-pc)
+* [fis-command-init](https://github.com/xiangshouding/fis-command-init)
+* [fis-scaffold-pc](https://github.com/xiangshouding/fis-scaffold-pc)
