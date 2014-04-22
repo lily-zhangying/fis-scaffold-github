@@ -3,13 +3,12 @@ var request = require('request'),
 	path = require('path'),
 	AdmZip = require('adm-zip');
 
-module.exports = function(options){
-	
-	function module_fn(){
-		var scf_opts = options;
-		scf_opts.repos = 'https://api.github.com/repos/';
-		var dist = scf_opts.dir;
+module.exports = function(options) {
+	var scf_opts = options;
+		scf_opts.repos = 'https://api.github.com/repos/',
+		dist = scf_opts.dir;
 
+	function module_fn() {
 		if (!options.withPlugin) {
             scf_opts.exclude = /package\.json|\/plugin\/.*|page\/layout.tpl|README.md/i;
         }
@@ -23,10 +22,7 @@ module.exports = function(options){
         });
 	}
 
-	function widget_fn(){
-		scf_opts = options;
-		scf_opts.repos = 'https://api.github.com/repos/';
-		var dist = scf_opts.dir;
+	function widget_fn() {
 
 		download_fn('lily-zhangying/pc-scaffold-widget', scf_opts, function (err, dirname) {
             fis.scaffold.mv(path.resolve(dist, dirname), dist);
@@ -60,15 +56,12 @@ module.exports = function(options){
 	}
 
 	//download from github
-	function download_fn(cmd, opt, cb){
-
+	function download_fn(cmd, opt, cb) {
 		var cmdArr = cmd.split('/');
 		var owner = cmdArr.shift() || '';
 		var repo = cmdArr.shift() || '';
 		var ref = cmdArr.join('/') || 'master';
-
-		var repos = opt.repos || 'https://api.github.com/repos/';
-		var download_url = repos + owner + '/' + repo + '/zipball/' + ref;
+		var download_url = opt.repos + owner + '/' + repo + '/zipball/' + ref;
 
 		var request_options = {
 			url : download_url,
@@ -78,18 +71,18 @@ module.exports = function(options){
 			encoding : null
 		};
 
-		request.get(request_options, function(err, result, body){
-			if(err){
+		request.get(request_options, function(err, result, body) {
+			if(err) {
 				fis.log.error(err);
                 return;
-            }else{
+            }else {
 				var extractDir = opt.dir;
 				var dispos = result.headers['content-disposition'];
 				var dirname = dispos.split(';').pop().split('=').pop().replace(/\.zip$/g, '').toString();
-				try{
+				try {
 					var zipFile = new AdmZip(body);
                 	zipFile.extractAllTo(extractDir, true);
-				}catch(e){
+				}catch(e) {
 					fis.log.error(e);
 				}
 				//返回dirname解压后的文件夹
