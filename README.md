@@ -33,14 +33,22 @@ fisp init -h
 ```
 
 ### 安装module
-1.  fisp init module -s github -d ../
+
+```bash
+  fisp init module -s github -d ../
+```
 
 ### 安装 widget
-2.  fisp init widget -s github -d ../
+
+```bash
+  fisp init widget -s github -d ../
+```
 
 ### 下载github上项目
 
-3.  fisp init :owner/:repos/:ref -s github -d ../
+```bash
+  fisp init :owner/:repos/:ref -s github -d ../
+```
 
 * :owner/:repos/:ref 是github的项目地址
 * 例如可以下载 fisp init lily-zhangying/fis-site/master
