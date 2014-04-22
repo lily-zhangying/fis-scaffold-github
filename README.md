@@ -9,6 +9,29 @@
 1. npm intall fis-scaffold-github -g
 2. npm intall fis-command-init -g
 
+## fisp init
+
+fisp init -h
+
+```bash
+  Usage: init <command> [options]
+
+  Commands:
+
+    module                 create a module
+    widget                 create a widget
+
+  Options:
+
+    -h, --help                 output usage information
+    -s, --scaffold <scaffold>
+    -d, --dir <name>           create to dir
+    --with-plugin              if create a module, whether include `plugin`
+    --repos <url>              repository
+    --verbose                  output verbose help
+    --list [query]             list component from the repos
+```
+
 ### 安装module
 1.  fisp init module -s github -d ../
 
@@ -22,9 +45,6 @@
 * :owner/:repos/:ref 是github的项目地址
 * 例如可以下载 fisp init lily-zhangying/fis-site/master
 * ref不写默认为master
-
-### fisp init命令使用请看
-* [fis-command-init](https://github.com/xiangshouding/fis-command-init)
 
 ## 缺点
 
