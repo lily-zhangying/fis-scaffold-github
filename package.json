@@ -23,7 +23,8 @@
     "url": "https://github.com/lily-zhangying/fis-scaffold-pc/issues"
   },
   "dependencies": {
-      "request": "*"
+      "request": "2.34.0",
+      "adm-zip" : "0.4.4"
   },
   "homepage": "https://github.com/xiangshouding/fis-scaffold-pc"
 }
