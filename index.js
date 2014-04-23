@@ -95,3 +95,9 @@ module.exports = function (options) {
         download: download_fn
     }
 }
+
+module.exports.command = function(commander){
+    commander.on('--help', function(){
+
+    });
+}
